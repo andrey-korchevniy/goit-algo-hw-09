@@ -53,11 +53,15 @@ greedy_times = []
 dp_times = []
 
 # Тестирование часу виконання алгоритмів
+print('\nРезультати жадібного алгоритму')
 for test_sum in test_sums:
     # Жадібний алгоритм
+    print(find_coins_greedy(test_sum))
     greedy_time = timeit.timeit(f'find_coins_greedy({test_sum})', globals=globals(), number=10)
     greedy_times.append(greedy_time)
 
+print("\nРезультати динамічного програмування")
+for test_sum in test_sums:
     # Динамічне програмування
     dp_time = timeit.timeit(f'find_min_coins({test_sum})', globals=globals(), number=10)
     dp_times.append(dp_time)
